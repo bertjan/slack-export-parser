@@ -73,7 +73,7 @@ public class Main {
     }
 
     private void processSlackFile(JsonNode file) {
-        if (file.get("timestamp") == null) {
+        if (file.get("timestamp") == null || file.get("name") == null) {
             return;
         }
         long timestamp = file.get("timestamp").asLong();
